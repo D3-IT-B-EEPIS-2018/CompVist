@@ -61,7 +61,12 @@ for i in range(number_files):
 
 	hist, _ = np.histogram(lbp, density=True, bins=6, range=(0,6))
 
-	nrp = 2103181031 + i
+	if(i==26):
+		nrp = 2103181060
+	elif(i>=10):
+		nrp = 2103181032 + i
+	else :
+		nrp = 2103181031 + i
 
 	print('gambar : ' + image_name + '/nrp : ' + str(nrp))
 	print('result : ' + match(hist))
