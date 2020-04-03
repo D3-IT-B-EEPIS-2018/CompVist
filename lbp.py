@@ -5,6 +5,7 @@ import os
 from skimage.feature import local_binary_pattern
 
 METHOD = 'uniform'
+script_path = os.path.dirname(os.path.realpath(__file__))
 
 # settings for LBP
 radius = 2
@@ -14,11 +15,11 @@ dataset = {}
 ########################################
 #membaca dataset dan menyimpan ke dictionary
 
-directory = r'E:\py\citra03\dataset'
-listds = os.listdir(directory)
+maps_path = os.path.join(script_path, "dataset")
+listds = os.listdir(maps_path)
 number_files = len(listds)
 
-os.chdir(directory)
+os.chdir(maps_path)
 arr = os.listdir()
 
 for i in range(number_files):
@@ -47,11 +48,10 @@ def match(counts):
 			best_name = key
 	return best_name
 
-
-directory = r'E:\py\citra03\testing01'
-listds = os.listdir(directory)
+maps_path = os.path.join(script_path, "testing01")
+listds = os.listdir(maps_path)
 number_files = len(listds)
-os.chdir(directory)
+os.chdir(maps_path)
 arr = os.listdir()
 
 for i in range(number_files):
