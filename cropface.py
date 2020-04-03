@@ -4,18 +4,20 @@ import math
 import os
 from matplotlib import pyplot as plt
 
+script_path = os.path.dirname(os.path.realpath(__file__))
+
 #DETECT THEM!
 
 face_cascade = cv2.CascadeClassifier('haarcascade_frontalface_default.xml')
 
-directory = r'E:\py\citra03\testing01'
+directory = os.path.join(script_path, "testing01")
 listds = os.listdir(directory)
 number_files = len(listds)
 os.chdir(directory)
 arr = os.listdir()
 
 for i in range(number_files):
-    directory = r'E:\py\citra03\testing01'
+    directory = os.path.join(script_path, "testing01")
     os.chdir(directory)
     image_name = arr[i]
     image = cv2.imread(image_name)
